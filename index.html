@@ -1,0 +1,67 @@
+---
+---
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="iso-8859-1">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/js/search.js"></script>
+    <style>
+    body {
+      font-family: Helvetica;
+      font-size: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }  
+    img,input{ vertical-align:middle; }
+    input[type=text] {
+        width:290px; height:21px;
+        padding: 4px;
+        font-size: 16px;
+    }
+    input[type=button], input[type=submit], input[type=reset] {
+      border: none;
+      padding: 8px;
+      text-decoration: none;
+      font-size: 12px;
+    }
+    </style>
+  </head>
+  <body>
+      <div class="container">
+        <h1>Xiote&#39;s Playground</h1>
+        <p>Lorem dignissimos et nam ratione debitis animi Incidunt amet
+        asperiores accusamus fuga enim. Illum voluptatem impedit nihil
+        quibusdam fugit accusantium doloribus sed Iusto veritatis
+        consequatur nesciunt libero nobis Suscipit tempora!
+
+
+       <form id="search" action="#" method="post">
+            <input type="text" name="tagname" id="tagname" placeholder="search tag" class="input_text" />
+            <input type="submit" value="Search">
+            <input type="button" value="New" style="width: 80px;" onClick="window.open({{ site.github.repository_url }}/new/master/_posts)">
+       </form>
+        </p>
+
+        <div class="message">
+            <h3>No results!</h3>
+        </div>
+
+        {% for tag in site.tags %}
+            <div class="posts" data-name="{{tag[0]}}">
+            <h3>{{tag[0] | capitalize}}</h3>
+            {% for post in tag[1] %}
+                <li><a href="{{post.url}}">{{post.title}}</a></li>
+            {% endfor %}
+            </div>
+        {% endfor %}
+
+      </div>
+
+
+
+  </body>
+</html>

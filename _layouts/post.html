@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="iso-8859-1">
+  <title></title>
+    <style>
+    body {
+      font-family: Helvetica;
+      font-size: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }  
+    img,input{ vertical-align:middle; }
+    input[type=text] {
+        width:290px; height:21px;
+        padding: 4px;
+        font-size: 16px;
+    }
+    input[type=button], input[type=submit], input[type=reset] {
+      border: none;
+      padding: 8px;
+      text-decoration: none;
+      font-size: 12px;
+    }
+    </style>
+</head>
+<body>
+  <div class="container">
+    <h1>{{page.title}}</h1>
+    <span style="color: green; text-transform: capitalize">{{page.tags | join : ', '}}</span> 
+    <input type="button" value="Edit" style="width: 80px; float: right;" onClick="{{ site.github.repository_url }}/edit/master/{{ page.relative_path }}">
+    {{content}}
+  </div>
+</body>
+</html>
