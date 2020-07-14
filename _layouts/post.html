@@ -30,7 +30,7 @@
   <div class="container">
     <h1>{{page.title}}</h1>
     <span style="color: green; text-transform: capitalize">{{page.tags | join : ', '}}</span> 
-    <input type="button" value="Edit" style="width: 80px; float: right;" onClick="{{ site.github.repository_url }}/edit/master/{{ page.relative_path }}">
+    <input type="button" value="Edit" style="width: 80px; float: right;" onClick="window.open('{{ site.github.repository_url }}/edit/master/{{ page.relative_path }}')">
     {{content}}
   </div>
 </body>
