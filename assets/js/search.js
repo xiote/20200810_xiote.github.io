@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    $('#tagname').focus();
     $('.message').hide();
 
     $('#search').submit(function (event) {
