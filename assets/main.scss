@@ -1,0 +1,31 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@import "minima";
+
+.post-tags {
+  font-size: $small-font-size;
+  color: $brand-color;
+  text-transform: capitalize;
+  float: right;
+  margin-right: $spacing-unit;
+}
+
+.post-buttons {
+  width: 80px;
+  float: right;
+}
+
+.post-link2 {
+  font-size:24px;
+}
+
+.tag-title {
+  margin-bottom: 0px; 
+  font-weight: bold;
+}
+
+.posts {
+  margin-bottom: 15px;
+}

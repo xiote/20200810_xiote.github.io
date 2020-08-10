@@ -1,39 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-    <style>
-    body {
-      font-family: Helvetica;
-      font-size: 20px;
-    }
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-    }  
-    img,input{ vertical-align:middle; }
-    input[type=text] {
-        width:290px; height:21px;
-        padding: 4px;
-        font-size: 16px;
-    }
-    input[type=button], input[type=submit], input[type=reset] {
-      border: none;
-      padding: 8px;
-      text-decoration: none;
-      font-size: 12px;
-    }
-    </style>
-</head>
-<body>
-  <div class="container">
-    <h1>{{page.title}}</h1>
-    <span style="color: green; text-transform: capitalize">{{page.tags | join : ', '}}</span> 
-    <input type="button" value="Edit" style="width: 80px; float: right;" onClick="window.open('{{ site.github.repository_url }}/edit/master/{{ page.relative_path }}')">
-    {{content}}
+---
+layout: default
+---
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+      <p>&nbsp
+      <input class="post-buttons" type="button" value="Edit" onClick="window.open('{{ site.github.repository_url }}/edit/master/{{ page.relative_path }}')">
+      <span class="post-tags">{{page.tags | join : ', '}}</span> 
+      </p>
+    <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    {{ content }}
   </div>
-</body>
-</html>
+
+  {%- if site.disqus.shortname -%}
+    {%- include disqus_comments.html -%}
+  {%- endif -%}
+
+  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+</article>
