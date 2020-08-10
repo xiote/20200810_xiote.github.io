@@ -5,7 +5,7 @@
 @import "minima";
 
 .post-tags {
-  font-size: $small-font-size;
+  font-size: 18px;
   color: $brand-color;
   text-transform: capitalize;
   float: right;
@@ -29,3 +29,24 @@
 .posts {
   margin-bottom: 15px;
 }
+
+.site-title {
+    font-size: 34px;
+    font-weight: bold;
+    line-height: 54px;
+    letter-spacing: -1px;
+    margin-bottom: 0;
+    float: left;
+}
+
+input[type=text] {
+        width:290px; height:21px;
+        padding: 4px;
+        font-size: 16px;
+    }
+    input[type=button], input[type=submit], input[type=reset] {
+      border: none;
+      padding: 6px;
+      text-decoration: none;
+      font-size: 12px;
+    }
