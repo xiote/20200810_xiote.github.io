@@ -10,7 +10,7 @@ $(document).ready(function() {
       if (tagname=="") {
         $('.posts').show();
               } else {
-      $('.posts[data-name~="'+tagname+'"]').show();
+      $('.posts[data-name*="'+tagname+'"]').show();
                       }
       if ($('.posts:visible').length < 1) {
         $('.message').show();
