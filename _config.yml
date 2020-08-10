@@ -6,3 +6,4 @@ highlighter: rouge
 gist:
   noscript: false
 markdown: redcarpet
+  fenced_code_blocks: true
